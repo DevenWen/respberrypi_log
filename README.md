@@ -31,11 +31,11 @@
 3. 在 /boot 目录添加 ssh、wifi 的配置（参考 Log 2.2）
 4. 插入 rasp pi，通电，重启
 
-> 官方文档提供了一个[极其简单漂亮的 Video](https://www.raspberrypi.com/documentation/computers/getting-started.html#using-raspberry-pi-imager)。
+> 官方文档为叫我们烧录系统，提供了一个[极其简单漂亮的 Video](https://www.raspberrypi.com/documentation/computers/getting-started.html#using-raspberry-pi-imager)。
 
 1.2 Docker 的安装可以参考，过程比较顺利。docker 安装完成后并不能马上启用，但 reboot 后就可以了。[参考](https://phoenixnap.com/kb/docker-on-raspberry-pi)
 
-## 2. 64bit OS 的缺陷与重装
+# 2. 64bit OS 的缺陷与重装
 
 2.1 今晚花了点时间组装摄像头，后来发现 64bit 的 respberry OS 是不支持 raspistill 工具的。参考：[官方 64bit-OS 反馈贴](https://forums.raspberrypi.com/viewtopic.php?p=1729089#p1729089) 
 
