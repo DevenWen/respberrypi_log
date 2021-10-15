@@ -44,7 +44,10 @@
 
 2.3 32bit 一开始遇到 VNC 连接桌面失败问题，参考了一下[博客](https://www.tomshardware.com/how-to/fix-cannot-currently-show-desktop-error-raspberry-pi)，调整一下显示器的分辨率就可以。
 
-2.4 后面还会花一点时间去了解 OpenCV。python 库安装的时候最好使用国内的源，就像这样： `pip3 install package -i https://pypi.tuna.tsinghua.edu.cn/simple/` ，[参考](https://zhuanlan.zhihu.com/p/124311177)
+2.4 后面还会花一点时间去了解 OpenCV。
+
+* python 库安装的时候最好使用国内的源，就像这样： `pip3 install package -i https://pypi.tuna.tsinghua.edu.cn/simple/` ，[参考](https://zhuanlan.zhihu.com/p/124311177)
+* OpenCV 在 B 站有搜索到这个比较简单的[教程](https://www.bilibili.com/video/BV1qh411Y7ty)。
 
 2.5 树莓派实验室，是最近几天看到的比较好的[树莓派中文网站](https://shumeipai.nxez.com/) 
 
