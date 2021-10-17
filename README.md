@@ -89,3 +89,10 @@ GPIO.cleanup() # 清理 GPIO
 ```
 
 执行一下，小灯就会一闪一闪的了。nice，这是自己编写的代码第一次出现在自己眼前，有趣的事情即将发生。这些工程需要积累的东西还很多。期待
+
+# 4. 电子水墨屏的调研
+Date：2021-10-18 
+
+4.1 今晚看了 B 站何同学的视频，他设计了一个桌面是带 LED 透明显示器。我想漂亮的电子硬件应该都有显示器，而显示器中，我觉得水墨屏是非常特点有意思的，所以花了一点时间调研。
+
+4.2 发现 B 站的科技区还是挺多视频，符合需求的是[这个](https://www.bilibili.com/video/BV1bf4y1177M?from=search&seid=3348862390233158475&spm_id_from=333.337.0.0)，不过翻译是比较差。另外基于这个视频可以看到 [微雪电子](https://dblsm.tmall.com/category-1499750318.htm?spm=a1z10.5-b-s.w4010-23957382871.13.78df6293ZkZpuh&search=y&parentCatId=1499750314&parentCatName=Raspberry+Pi&catName=%C4%AB%CB%AE%C6%C1#bd) 会供应这类的屏幕和驱动板。
