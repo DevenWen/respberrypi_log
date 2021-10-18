@@ -96,3 +96,38 @@ Date：2021-10-18
 4.1 今晚看了 B 站何同学的视频，他设计了一个桌面是带 LED 透明显示器。我想漂亮的电子硬件应该都有显示器，而显示器中，我觉得水墨屏是非常特点有意思的，所以花了一点时间调研。
 
 4.2 发现 B 站的科技区还是挺多视频，符合需求的是[这个](https://www.bilibili.com/video/BV1bf4y1177M?from=search&seid=3348862390233158475&spm_id_from=333.337.0.0)，不过翻译是比较差。另外基于这个视频可以看到 [微雪电子](https://detail.tmall.com/item.htm?id=550688629935&skuId=3770460932966) 会供应这类的屏幕和驱动板。
+
+# 5. OpenCV 的安装
+Date: 2021-10-18
+
+5.1 树莓派 apt-get 的安装速度很慢，可以考虑使用[清华源](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/)，树莓派拥有更好的社区，这下子显示出来了。棒！这个数据源的下载速度确实非常快，后面在墙内安装东西，还是考虑一些源，节省生命。
+
+5.2 得益于 B 站的小哥介绍，我做了一下 OpenCV 工具的安装。
+```shell
+pip3 install opencv-python # 偶尔会失败，需要重试
+pip3 install opencv-contrib-python==4.1.0.25 # 
+apt-get install libatlas-base-dev
+apt-get install libjasper-dev -y
+apt-get install libqtgui4
+apt-get install python3-pyqt5 -y
+apt-get install libqt4-test
+apt-get install libhdf5-dev -y
+```
+
+测试一下：
+```python
+Python 3.7.3 (default, Jan 22 2021, 20:04:44)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> cv2.__version__
+'4.1.0'
+>>>
+```
+
+
+# 6. SD 卡的使用技巧
+Date: 2021-10-19
+
+6.1 今天在休息的时候无意中发现，tf 卡在大量读写时，会很容易达到寿命的极限。对此树莓派提供了一些延长使用 tf 卡的技巧，就是让 tf 设置为 read only 模式，然后日常编写的文件都会存在内存中，和正常使用无二，但一旦断电后，就必定需要将数据先另外提交。
+
