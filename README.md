@@ -21,7 +21,7 @@
  
 ## 库
 - [ ] python 邮件模块
-- [ ] python OpenCV
+- [x] python OpenCV，[Google meidapipe](https://google.github.io/mediapipe/)
 
 # 1. 烧录系统
 
@@ -125,9 +125,26 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-
 # 6. SD 卡的使用技巧
 Date: 2021-10-19
 
 6.1 今天在休息的时候无意中发现，tf 卡在大量读写时，会很容易达到寿命的极限。对此树莓派提供了一些延长使用 tf 卡的技巧，就是让 tf 设置为 read only 模式，然后日常编写的文件都会存在内存中，和正常使用无二，但一旦断电后，就必定需要将数据先另外提交。
+
+# 7. python opencv && raspberry pi camera
+Date：2021-10-21
+
+7.1 写代码还是需要 vscode，`apt update && apt install code` 就可以[安装 vscode](https://code.visualstudio.com/docs/setup/raspberry-pi)。方便！
+
+7.2 简单地在[ 这个网站 ](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)过了一下 camera 的入门练习。
+
+7.3 pi 在运行的时候突变变得比较慢，考虑到是温度问题，估通过命令 `/opt/vc/bin/vcgencmd measure_temp` 查看了温度，68°，接了风扇后降到 50°。
+
+7.4 在[ B 站](https://www.bilibili.com/video/BV1qh411Y7ty)看到了关于一个 Google 开发的 mediapipe 框架，这是基于 OpenCV 上，构建的一个 AI，用于捕捉某些物件的。所以考虑尝试一下，刚好有 raspberry4 的库，安装方法在[这里](https://pypi.org/project/mediapipe-rpi4/)。（树莓派有大量的极客库都被实现了），但 mediapipe-rpi4 库在国内的源都没有，安装起来有点慢，大概 36MB，20min 左右。
+
+7.5 试了一下上述的视频的《手部跟踪》章节，非常容易就能够在 pi4 上实现下图的效果，代码也写好了，非常简单，非常有意思，但深夜了，先去休息。
+
+
+
+
+
 
