@@ -141,8 +141,33 @@ Date：2021-10-21
 
 7.4 在[ B 站](https://www.bilibili.com/video/BV1qh411Y7ty)看到了关于一个 Google 开发的 mediapipe 框架，这是基于 OpenCV 上，构建的一个 AI，用于捕捉某些物件的。所以考虑尝试一下，刚好有 raspberry4 的库，安装方法在[这里](https://pypi.org/project/mediapipe-rpi4/)。（树莓派有大量的极客库都被实现了），但 mediapipe-rpi4 库在国内的源都没有，安装起来有点慢，大概 36MB，20min 左右。
 
-7.5 试了一下上述的视频的《手部跟踪》章节，非常容易就能够在 pi4 上实现下图的效果，代码也写好了，非常简单，非常有意思，但深夜了，先去休息。
+7.5 试了一下上述的视频的《手部跟踪》章节，非常容易就能够在 pi4 上实现下图的效果，[代码也写好了](https://github.com/DevenWen/respberrypi_log/blob/main/opencv/mediapipe/hand_tracking_min.py)，非常简单，非常有意思，但深夜了，先去休息。
 
+```python
+import cv2
+import mediapipe as mp
+import time
+
+cap = cv2.VideoCapture(0)
+mpHands = mp.solutions.hands
+hands = mpHands.Hands()
+mpDraw = mp.solutions.drawing_utils
+
+while True:
+    success, img = cap.read()
+    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    results = hands.process(imgRGB)
+    if results.multi_hand_landmarks:
+        for handLms in results.multi_hand_landmarks:
+            mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
+
+    cv2.imshow("Image", img)
+    cv2.waitKey(1)
+```
+
+<div align="center">
+	<img src="./img/%E6%89%8B%E9%83%A8%E8%AF%86%E5%88%AB_20211021011051.png" alt="Editor" width="500">
+</div>
 
 
 
