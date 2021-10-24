@@ -10,18 +10,20 @@
 - [x] 学习面包版和接线，点亮小灯
 - [ ] 学习接线，编写一个智能风扇
 - [x] 学习摄像头，小功能待定
-- [ ] 申请域名，接入公网
+- [ ] 申请域名，接入公网（方法：申请一个域名，和定时更新自己的 ip 到该域名上）
 - [ ] 里程碑：Welcome Page，通过摄像头，实时记录一张图片到 Http 服务器中，可以通过公网访问这个主页，并定时更新 Readme 内容到主页中？（目的是让访问者可以观察到我的计划）
 - [ ] 将此网站和公众号进行联动（联动内容暂未定）
 - [ ] 学习 motor 相关驱动，步进电机？FOC控制板？Think More
-- [ ] 学习 Python 的 OpenCV 库，学习人脸识别
+- [x] 学习 Python 的 OpenCV 库，学习人脸识别（使用 mediapipe 可快速实现）
 - [ ] 学习 距离传感器
 - [ ] 里程碑：制作一个遥控小车
-- [ ] 里程碑：制作一个自动驾驶小车
+- [ ] 里程碑：制作一个自动驾驶小车（基于简单的识别库 + 前置的机械控制）
  
-## 库
+## 库的安装和了解
 - [ ] python 邮件模块
 - [x] python OpenCV，[Google meidapipe](https://google.github.io/mediapipe/)
+- [ ] [yolo](https://pjreddie.com/darknet/yolo/) v5 基于 OpenCV 的实时对象识别库
+- [ ] [transformers](https://github.com/huggingface/transformers) github 上一个 5w star 的 AI 库，不少极客都引用了它
 
 # 1. 烧录系统
 
