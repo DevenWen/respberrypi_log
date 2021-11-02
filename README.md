@@ -87,7 +87,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 最后 yolov5 在树莓派上的 demo 终于还是完成了。
 
 <div align="center">
-	<img src="./img/yolo_1st_demo.png" alt="Editor" width="500">
+	<img src="./img/yolo_1st_demo.jpg" alt="Editor" width="500">
 </div>
 
 
