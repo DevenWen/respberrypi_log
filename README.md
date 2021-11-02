@@ -134,7 +134,7 @@ while True:
 ```
 
 <div align="center">
-	<img src="./img/%E6%89%8B%E9%83%A8%E8%AF%86%E5%88%AB_20211021011051.png" alt="Editor" width="500">
+	<img src="./img/hand_tracking_demo.png" alt="Editor" width="500">
 </div>
 
 
