@@ -22,15 +22,74 @@
 ## 库的安装和了解
 - [ ] python 邮件模块
 - [x] python OpenCV，[Google meidapipe](https://google.github.io/mediapipe/)
-- [ ] [yolo](https://pjreddie.com/darknet/yolo/) v5 基于 OpenCV 的实时对象识别库
+- [x] [yolo](https://pjreddie.com/darknet/yolo/) v5 基于 OpenCV 的实时对象识别库
 - [ ] [transformers](https://github.com/huggingface/transformers) github 上一个 5w star 的 AI 库，不少极客都引用了它
 
 # 9 yolov5
 Date: 2021-10-30
 
-晚上尝试了一下 yolov5 的安装，发现 reaspberry 在安装 pytouch >= 1.7.0 的时候会遇到些问题，如下，调研过后发现 pytouch 在 32bit 的系统上不一定有适配的包。但是 youtube 上有人成功在 raspberry 上安装了 yolov5，故后面会继续了解一下。
+晚上尝试了一下 yolov5 的安装，发现 reaspberry 在安装 pytouch >= 1.7.0 的时候会遇到些问题，如下，调研过后发现 pytorch 在 32bit 的系统上不一定有适配的包。但是 youtube 上有人成功在 raspberry 上安装了 yolov5，故后面会继续了解一下。
 
-yolov5 主要吸引我的地方，首先是识别的速度比较快，另外它提供了一套自己训练的模型的教程，这意味着可以训练自己的 model，为计算机视觉提供更多的可能。·
+yolov5 主要吸引我的地方，首先是识别的速度比较快，另外它提供了一套自己训练的模型的教程，这意味着可以训练自己的 model，为计算机视觉提供更多的可能。
+
+Date: 2021-11-2
+
+今晚会继续安装 yolov5，从[这里](https://github.com/weirros/yolov5_wi_pi4) 发现官方没有给 torch 提供 respberry 的包，所以需要自己下载相关的依赖。
+
+> By the way, pytorch has not provided an official compiled packages of arm32 (arm64 only); you need to download both packages in release here;
+> 
+> wget https://github.com/weirros/yolov5_wi_pi4/releases/download/Torch1.7/torch-1.7.0a0-cp37-cp37m-linux_armv7l.whl
+> 
+> wget https://github.com/weirros/yolov5_wi_pi4/releases/download/Torch1.7/torchvision-0.8.0a0+45f960c-cp37-cp37m-linux_armv7l.whl
+
+安装完成后，发现有一下错误。
+
+```shell
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/local/lib/python3.7/dist-packages/torch/__init__.py", line 190, in <module>
+    from torch._C import *
+ImportError: libopenblas.so.0: cannot open shared object file: No such file or directory
+```
+
+这篇文章同样给了解决的步骤：
+```
+*getting ImportError: libopenblas.so.0: cannot open shared object file or directory
+you may need install this lib of system;
+
+sudo apt-get install libjpeg8-dev -y
+sudo apt-get install libatlas-base-dev gfortran -y
+sudo apt-get install libgtk2.0-dev -y
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
+sudo apt-get install libtiff5-dev -y
+sudo apt-get install libjasper-dev -y
+sudo apt-get install libpng12-dev -y
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
+sudo apt install libopenblas-dev libblas-dev m4 cmake cython python3-dev python3-yaml python3-setuptools
+```
+
+最终 torch 被顺利安装上了。
+
+```shell
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> 
+```
+
+通过以上步骤安装好 torch 后，在 yolov5 requirement.txt 中去除 torch 相关的配置。然后执行 `pip3 install -r requirement.txt`，假如网络条件好的话，安装会比较顺利的。我的 pi 所在的网络并不好，经常需要从电脑中下载好 `*.whl` 文件，通过 sftp 上传到 pi 中利用 pip3 进行安装。整体来说不方便，明显觉得 resberrypi 需要在一个还可以的网络环境下工作会更好，这或许是后面的计划之一。
+
+最后 yolov5 在树莓派上的 demo 终于还是完成了。
+
+<div align="center">
+	<img src="./img/yolo_1st_demo.png" alt="Editor" width="500">
+</div>
+
 
 # 8 购买域名
 Date: 2021-10-26
