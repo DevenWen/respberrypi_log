@@ -25,6 +25,10 @@
 - [x] [yolo](https://pjreddie.com/darknet/yolo/) v5 基于 OpenCV 的实时对象识别库
 - [ ] [transformers](https://github.com/huggingface/transformers) github 上一个 5w star 的 AI 库，不少极客都引用了它
 
+# 10 ML 
+Date： 2021-11-04
+增加一个新积木：ML，此前一直在学习，今晚看了几个好视频，故写了一篇[ ML 的博客](https://juejin.cn/post/7026393389612400654)。希望能够在 raspberry 上用到。
+
 # 9 yolov5
 Date: 2021-10-30
 
